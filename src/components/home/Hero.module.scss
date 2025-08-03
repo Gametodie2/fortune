@@ -1,0 +1,186 @@
+@use "../../assets/styles/variables" as *;
+
+.noisyOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  inset: 0; // Cover the entire hero section
+  background-image: url("/images/noise.png");
+  background-size: cover;
+  opacity: 1; // Will animate to 0
+  z-index: 2; // Place it above the image, but below the heroContent and Navbar
+  pointer-events: none; // Allows clicks/interactions to pass through to elements below
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  width: 1280px;
+
+  margin: 2rem 0;
+
+  height: calc(100dvh - 60px - 4rem);
+
+  .heroContent {
+    position: relative;
+    z-index: 5;
+  }
+
+  .rotatingButtonContainer {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    width: 120px; // Kleinere container
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--font-exo);
+
+    @media screen and (max-width: 1280px) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .mainCircleButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 50%;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: $font-size-xxs;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transition: none;
+    cursor: pointer;
+
+    span {
+      padding: 0 8px;
+      line-height: 1.2;
+    }
+  }
+
+  .rotatingTextSvg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .rotatingTextPath {
+    font-family: var(--font-exo);
+    fill: var(--color-white-100);
+    font-size: $font-size-xs;
+    letter-spacing: 1px;
+    font-weight: normal;
+  }
+
+  .imageContainer {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 20px;
+      transition: transform 0.1s ease-out, border-radius 0.1s ease-out;
+    }
+  }
+}
+
+// .hero {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   width: 100%;
+//   padding-top: 4rem;
+//   // Voeg dit toe om te zorgen dat de hero sectie de volledige viewport hoogte heeft,
+//   // zodat de scrolltrigger goed werkt over een langere afstand.
+//   min-height: 100dvh;
+//   height: 100dvh;
+//   position: relative; // Zorg ervoor dat dit ingesteld is voor positionering van kinderen
+
+//   &.noisy {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-image: url("/images/noise.png");
+//     background-size: cover;
+//     opacity: 1;
+//     inset: 0;
+//   }
+// }
+
+// .scrollArrow {
+//   width: 40px;
+//   height: 40px;
+
+//   position: absolute;
+//   bottom: 3rem;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   z-index: 10; // Zorg ervoor dat de pijl boven de afbeelding blijft
+// }
+
+// // .imageContainer {
+// //   position: fixed; // Verander naar fixed zodat het op zijn plek blijft terwijl je scrollt
+// //   bottom: 0;
+// //   left: 0;
+// //   width: 100%;
+// //   height: 85%; // Start hoogte van de afbeelding
+
+// //   padding: 2rem 5rem; // Behoud de padding voor de initiële weergave
+
+// //   display: flex;
+// //   justify-content: center;
+// //   align-items: center;
+// //   z-index: -1;
+// //   overflow: hidden;
+
+// //   img {
+// //     width: 100%;
+// //     height: 100%;
+// //     object-fit: cover;
+// //     object-position: center;
+// //     // Voeg een initiële border-radius toe als je die had
+// //     border-radius: 20px; // Pas dit aan naar de gewenste initiële border-radius
+// //     z-index: -1;
+// //     // Transition toevoegen voor soepelere animatie als JS faalt, maar GSAP is leading
+// //     transition: transform 0.1s ease-out, border-radius 0.1s ease-out;
+// //   }
+// // }

@@ -1,12 +1,45 @@
-# React + Vite
+# Fortune Garden Restaurant Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a modern, single-page website, built with **React**, for the Chinese restaurant "Fortune Garden" in Sint-Niklaas. The website is optimized for performance and search engine optimization (SEO) using best practices. The website features a responsive design and advanced animations with **GSAP**.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Frontend JavaScript library.
 
-## Expanding the ESLint configuration
+- **GSAP (GreenSock)**: Powerful animation library.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React Helmet**: Manages the `<head>` of the page for SEO purposes.
+
+- **npm** or **Yarn**: For package management.
+
+## Installation and Local Development
+
+Follow these steps to set up and run the project locally:
+
+### 1. Clone the Repository
+
+Open your terminal and clone the repository:
+
+```bash
+git clone git@github.com:Gametodie2/fortune.git
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd fortune
+```
+
+### 3. Install Dependencies
+
+```bash
+yarn
+```
+
+### 4. Start the Development Server
+
+```bash
+yarn dev
+```
+
+Your application should now be running on `http://localhost:5173`.
